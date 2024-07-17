@@ -1,0 +1,85 @@
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minhas Tarefas Semanais</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Minhas Tarefas Semanais</h1>
+        <div class="toggle-mode">
+            <label for="mode">Modo Escuro:</label>
+            <button id="mode" onclick="toggleMode()">OFF</button>
+        </div>
+        <label for="dias">Selecione o dia:</label>
+        <select id="dias" onchange="verificarTarefas()">
+            <option value="segunda-feira">Segunda-feira</option>
+            <option value="terça-feira" disabled>Terça-feira</option>
+            <option value="quarta-feira" disabled>Quarta-feira</option>
+            <option value="quinta-feira" disabled>Quinta-feira</option>
+            <option value="sexta-feira" disabled>Sexta-feira</option>
+        </select>
+        
+        <div class="progress-container">
+            <label>Progresso Semanal:</label>
+            <div class="progress-bar">
+                <div class="progress" id="progress"></div>
+            </div>
+        </div>
+
+        <div id="tarefas">
+            <div class="dia" id="segunda-feira">
+                <h2><img src="golf-icon.svg" alt="Golfe" class="icon"> Segunda-feira</h2>
+                <div class="grafico-container">
+                    <canvas id="grafico-segunda-feira"></canvas>
+                </div>
+                <ul id="segunda-tarefas"></ul>
+                <button id="enviar" disabled>Enviar</button>
+            </div>
+            
+            <div class="dia" id="terça-feira">
+                <h2><img src="golf-icon.svg" alt="Golfe" class="icon"> Terça-feira</h2>
+                <div class="grafico-container">
+                    <canvas id="grafico-terca-feira"></canvas>
+                </div>
+                <ul id="terca-tarefas"></ul>
+                <button id="enviar" disabled>Enviar</button>
+            </div>
+            
+            <div class="dia" id="quarta-feira">
+                <h2><img src="golf-icon.svg" alt="Golfe" class="icon"> Quarta-feira</h2>
+                <div class="grafico-container">
+                    <canvas id="grafico-quarta-feira"></canvas>
+                </div>
+                <ul id="quarta-tarefas"></ul>
+                <button id="enviar" disabled>Enviar</button>
+            </div>
+            
+            <div class="dia" id="quinta-feira">
+                <h2><img src="golf-icon.svg" alt="Golfe" class="icon"> Quinta-feira</h2>
+                <div class="grafico-container">
+                    <canvas id="grafico-quinta-feira"></canvas>
+                </div>
+                <ul id="quinta-tarefas"></ul>
+                <button id="enviar" disabled>Enviar</button>
+            </div>
+            
+            <div class="dia" id="sexta-feira">
+                <h2><img src="golf-icon.svg" alt="Golfe" class="icon"> Sexta-feira</h2>
+                <div class="grafico-container">
+                    <canvas id="grafico-sexta-feira"></canvas>
+                </div>
+                <ul id="sexta-tarefas"></ul>
+                <button id="enviar" disabled>Enviar</button>
+            </div>
+        </div>
+
+        <button id="salvar" onclick="salvarSemana()">Salvar Semana</button>
+    </div>
+    
+    <script src="tarefas.js"></script>
+</body>
+</html>
